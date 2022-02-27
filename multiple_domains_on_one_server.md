@@ -1,4 +1,8 @@
 # NGINX - Host multiple domains on one server (Odoo)
+<br/>
+<br/>
+
+<h1 align="center">Domain 1 Setup</h1>
 
 ## Step 1: Install Nginx
 ```
@@ -65,8 +69,12 @@ sudo ln -s /etc/nginx/sites-available/odoo15.conf /etc/nginx/sites-enabled/odoo1
 sudo nginx -t
 sudo service nginx restart
 ```
+<br/>
+<br/>
+<br/>
+<br/>
+<h1 align="center">Domain 2 Setup</h1>
 
-# Second Domain
 ## Step 3: Create a new Nginx configuration for Odoo in the sites-available directory.
 ```
 sudo nano /etc/nginx/sites-available/odoo14.conf
