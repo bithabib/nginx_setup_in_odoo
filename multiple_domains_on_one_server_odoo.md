@@ -82,7 +82,7 @@ sudo nano /etc/nginx/sites-available/odoo14.conf
 ## Step 4: Copy and paste the following configuration, ensure that you change the server_name directory to match your domain name.
 ```
 upstream odoo14 {
-     server 127.0.0.1:8015;
+     server 127.0.0.1:8014;
 }
 
 server {
