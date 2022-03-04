@@ -41,7 +41,7 @@ server {
      proxy_set_header X-Real-IP $remote_addr;
 
      location / {
-        proxy_redirect off;
+        #proxy_redirect off;
         proxy_pass http://odoo15;
      }
 
@@ -101,7 +101,7 @@ server {
      proxy_set_header X-Real-IP $remote_addr;
 
      location / {
-        proxy_redirect off;
+        #proxy_redirect off;
         proxy_pass http://odoo14;
      }
 
