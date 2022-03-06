@@ -65,3 +65,6 @@ sudo ln -s /etc/nginx/sites-available/odoo15.conf /etc/nginx/sites-enabled/odoo1
 sudo nginx -t
 sudo service nginx restart
 ```
+# Reference: 
+     - https://gist.github.com/HabiburRahman1/f4f7930b3515620ed721c3a511116779
+     - 
