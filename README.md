@@ -69,5 +69,5 @@ sudo service nginx restart
 
 
 Reference
-     - https://gist.github.com/HabiburRahman1/f4f7930b3515620ed721c3a511116779
-     - Second nested list item
+- https://gist.github.com/HabiburRahman1/f4f7930b3515620ed721c3a511116779
+- Second nested list item
