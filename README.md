@@ -17,7 +17,7 @@ sudo nano /etc/nginx/sites-available/odoo15.conf
 ```
 ## Step 4: Copy and paste the following configuration, ensure that you change the server_name directory to match your domain name.
 ```
-upstream odoo15 {
+upstream domainname.com {
      server 127.0.0.1:8015;
 }
 
@@ -38,14 +38,14 @@ server {
 
      location / {
         #proxy_redirect off;
-        proxy_pass http://odoo15;
+        proxy_pass http://domainname.com;
      }
 
      location ~* /web/static/ {
          proxy_cache_valid 200 90m;
          proxy_buffering on;
          expires 864000;
-         proxy_pass http://odoo15;
+         proxy_pass http://domainname.com;
      }
 
      gzip_types text/css text/less text/plain text/xml application/xml application/json application/javascript;
