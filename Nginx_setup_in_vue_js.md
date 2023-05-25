@@ -77,7 +77,17 @@ server {
     access_log /var/log/nginx/vue-app-access.log;
     gzip_types text/css text/less text/plain text/xml application/xml application/json application/javagzip on;
 }
+```
+Hit Ctrl+X followed by Y and Enter to save the file and exit.
 
+## Step 5: To enable this newly created website configuration, symlink the file that you just created into the sites-enabled directory.
 
 ```
+sudo ln -s /etc/nginx/sites-available/odoo14.conf /etc/nginx/sites-enabled/odoo14.conf
+```
+## Step 6: Check your configuration and restart Nginx for the changes to take effect.
 
+```
+sudo nginx -t
+sudo service nginx restart
+```
