@@ -38,9 +38,16 @@ npm run build
 sudo apt update
 sudo apt install nginx
 ```
+## Step 2: Remove default Nginx configurations
 ```
-sudo nano /etc/nginx/sites-available/example.com
+sudo rm /etc/nginx/sites-enabled/default
+sudo rm /etc/nginx/sites-available/default
 ```
+## Step 3: Create a new Nginx configuration for Odoo in the sites-available directory.
+```
+sudo nano /etc/nginx/sites-available/odoo15.conf
+```
+## Step 4: Copy and paste the following configuration, ensure that you change the server_name directory to match your domain name.
 ```
 upstream vue {
      server 127.0.0.1:8069;
