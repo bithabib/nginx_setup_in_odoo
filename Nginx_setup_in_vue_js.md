@@ -38,7 +38,9 @@ npm run build
 sudo apt update
 sudo apt install nginx
 ```
-
+```
+sudo nano /etc/nginx/sites-available/example.com
+```
 ```
 upstream vue {
      server 127.0.0.1:8069;
