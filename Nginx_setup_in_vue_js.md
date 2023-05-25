@@ -30,6 +30,10 @@ npm run serve
 # NGINX Configuration
    First you need to build your apps which will create a folder name dist
 ```
+# uninstall Nginx 
+sudo apt remove nginx
+```
+```
 # goto you project folder and run this command
 npm run build
 ```
