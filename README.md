@@ -17,13 +17,13 @@ sudo nano /etc/nginx/sites-available/odoo15.conf
 ```
 ## Step 4: Copy and paste the following configuration, ensure that you change the server_name directory to match your domain name.
 ```
-upstream domainname.com {
-     server 127.0.0.1:8015;
+upstream domain_name {
+     server 127.0.0.1:8069;
 }
 
 server {
      listen 80;
-     server_name domainname.com;
+     server_name domain_name;
 
      access_log /var/log/nginx/access.log;
      error_log /var/log/nginx/error.log;
@@ -33,19 +33,18 @@ server {
      proxy_send_timeout 720s;
      proxy_set_header X-Forwarded-Host $host;
      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-     proxy_set_header X-Forwarded-Proto $scheme;
+     proxy_set_header X-Forwarded-Proto https;
      proxy_set_header X-Real-IP $remote_addr;
 
      location / {
-        #proxy_redirect off;
-        proxy_pass http://domainname.com;
+        proxy_redirect http://domain_name/ https://domain_name/;
+        proxy_pass http://sc.sunudrive.com;
      }
-
      location ~* /web/static/ {
          proxy_cache_valid 200 90m;
          proxy_buffering on;
          expires 864000;
-         proxy_pass http://domainname.com;
+         proxy_pass http://domain_name;
      }
 
      gzip_types text/css text/less text/plain text/xml application/xml application/json application/javascript;
