@@ -38,7 +38,7 @@ server {
 
      location / {
         proxy_redirect http://domain_name/ https://domain_name/;
-        proxy_pass http://sc.sunudrive.com;
+        proxy_pass http://domain_name;
      }
      location ~* /web/static/ {
          proxy_cache_valid 200 90m;
