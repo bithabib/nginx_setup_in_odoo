@@ -27,7 +27,7 @@ server {
 
      access_log /var/log/nginx/access.log;
      error_log /var/log/nginx/error.log;
-
+     client_max_body_size 100M;
      proxy_read_timeout 720s;
      proxy_connect_timeout 720s;
      proxy_send_timeout 720s;
