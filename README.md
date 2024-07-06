@@ -1,3 +1,5 @@
+github : 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-11
+
 # Nginx setup in Odoo
 
 ## Step 1: Install Nginx
