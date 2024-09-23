@@ -25,7 +25,7 @@ upstream domain_name {
 
 server {
      listen 80;
-     server_name domain_name;
+     server_name domain_name *.domain_name;  # Supports subdomains like h.bizsweet.ai
 
      access_log /var/log/nginx/access.log;
      error_log /var/log/nginx/error.log;
@@ -35,13 +35,19 @@ server {
      proxy_send_timeout 720s;
      proxy_set_header X-Forwarded-Host $host;
      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-     proxy_set_header X-Forwarded-Proto https;
+     proxy_set_header X-Forwarded-Proto $scheme;
      proxy_set_header X-Real-IP $remote_addr;
 
      location / {
-        proxy_redirect http://domain_name/ https://domain_name/;
-        proxy_pass http://domain_name;
+        proxy_pass http://domain_name;  # Use upstream directly
+        proxy_set_header Host $host;  # Forward full domain, including subdomains
+        proxy_redirect off;  # Disable any automatic redirects
      }
+
+     location /longpolling {
+        proxy_pass http://127.0.0.1:8072;
+     }
+
      location ~* /web/static/ {
          proxy_cache_valid 200 90m;
          proxy_buffering on;
