@@ -41,7 +41,7 @@ server {
      location / {
         proxy_pass http://domain_name;  # Use upstream directly
         proxy_set_header Host $host;  # Forward full domain, including subdomains
-        proxy_redirect off;  # Disable any automatic redirects
+        proxy_redirect http://$host/ https://$host/;  # Disable any automatic redirects
      }
 
      location /longpolling {
@@ -58,6 +58,8 @@ server {
      gzip_types text/css text/less text/plain text/xml application/xml application/json application/javascript;
      gzip on;
  }
+
+
 ```
 Hit Ctrl+X followed by Y and Enter to save the file and exit.
 
